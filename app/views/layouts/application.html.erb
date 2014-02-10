@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Gratitude</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<div id="user-widget">
+<div class="container">
+	<div id="user-widget" class="page-header">
 	  <% if current_user %>
 	    Welcome <strong><%= current_user.name %></strong>!
 	    <%= link_to "Sign out", signout_path, id: "sign_out" %>
@@ -17,7 +19,8 @@
 	  <% end %>
 	</div>
 
-<%= yield %>
-
+  <h1>Gratitude</h1>
+  <%= yield %>
+</div>
 </body>
 </html>

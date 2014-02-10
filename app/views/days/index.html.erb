@@ -1,27 +1,21 @@
-<h1>Listing days</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Favorite</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @days.each do |day| %>
-      <tr>
-        <td><%= day.favorite %></td>
-        <td><%= link_to 'Show', day %></td>
-        <td><%= link_to 'Edit', edit_day_path(day) %></td>
-        <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @days.each do |day| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= day.id %>
+    </div>
+      <ul class="list-group">
+      <% day.graces.each do |grace| %>
+        <li class="list-group-item"><%= grace.description %></li>
+      <% end %>
+      <li class="list-group-item">
+        <%= link_to 'New Grace', new_day_grace_path(day), :class => "btn btn-default" %>
+      </li>
+      </ul>
+      <div class="panel-body">
+      <%= link_to 'Delete this day', day, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  </div>
+<% end %>
 
 <br>
-
-<%= link_to 'New Day', new_day_path %>
+<%= link_to 'New Day', new_day_path, :class => "btn btn-default" %>
