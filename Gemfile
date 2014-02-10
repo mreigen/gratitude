@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
