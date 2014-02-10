@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @grace.description %>
+</p>
+
+<%= link_to 'Edit', edit_day_grace_path(@day, @grace) %> |
+<%= link_to 'Back', day_graces_path(@day) %>
